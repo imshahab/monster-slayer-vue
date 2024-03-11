@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Monster Slayer</title>
+        <script src="./vue.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="css/foundation.min.css">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="icon" type="image/x-icon" href="/assets/monster.png">
+    </head>
+    <body>
+        <div id="app">
+            <section class="row">
+                <div class="small-6 columns">
+                    <h1 class="text-center">YOU</h1>
+                    <div class="healthbar">
+                        <div class="health-progress text-center" :style="{width: userHealth + '%'}">
+                            <small class="health-percent">{{ userHealth }}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="small-6 columns">
+                    <h1 class="text-center">MONSTER</h1>
+                    <div class="healthbar">
+                        <div class="health-progress text-center" :style="{width: monsterHealth + '%'}">
+                            <small class="health-percent">{{ monsterHealth }}</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="row controls" v-if="gameOver">
+                <div class="small-12 columns">
+                    <button id="start-game" @click="startNew()">START NEW GAME</button>
+                </div>
+            </section>
+            <section class="row controls" v-if="!gameOver">
+                <div class="small-12 columns">
+                    <button id="attack" @click="attack()">ATTACK</button>
+                    <button id="special-attack" @click="specialAttack()">SPECIAL ATTACK</button>
+                    <button id="heal" @click="heal()">HEAL</button>
+                    <button id="give-up" @click="giveUp()">GIVE UP</button>
+                </div>
+            </section>
+            <section class="log">
+                <p class="notice-text" v-if="logs.length === 0">Start the fight!</p>
+                    <ul>
+                        <li v-for="log in logs" :class="[log.turn == 'player' ? 'player-turn' : 'monster-turn']">
+                            {{ log.turn }} {{ log.act }} {{ log.enemy }} for {{ log.amount }}
+                        </li>
+                    </ul>
+            </section>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>

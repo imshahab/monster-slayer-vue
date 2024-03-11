@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: "Montserrat", sans-serif;
+    user-select: none;
+    background-color: #2a3950;
+    color: #f9f8fa;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.healthbar {
+    width: 80%;
+    height: 40px;
+    background-color: #eee;
+    margin: auto;
+    transition: width 500ms;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+.health-progress {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #407f9c; 
+    margin: 0; 
+    color: white;
+}
+
+.controls, .log {
+    margin-top: 16px;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+}
+
+.log {
+    background-color: #243144;
+    margin: 10px auto 0 auto;
+    padding: 1em;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 0.25em;
+}
+
+.turn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.log ul {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+.log ul li {
+    margin: 5px;
+    border-radius: 0.25em;
+}
+
+.log ul .player-turn {
+    color: #355c7d;
+    background-color: #ced5ff;
+}
+
+.log ul .monster-turn {
+    color: #ff7582;
+    background-color: #ffdddd;
+}
+
+.notice-text {
+    color: #ffffff38;
+}
+
+button {
+    font-size: 1rem;
+    padding: 12px;
+    margin: 8px 4px;
+    border-radius: 0.5em;
+}
+
+#start-game {
+    background-color: #407f9c;
+}
+
+#start-game:hover {
+    background-color: #2d5b70;
+}
+
+#attack {
+    background-color: #ff7582;
+}
+
+#attack:hover {
+    background-color: #d05b67;
+}
+
+#special-attack {
+    background-color: #c56d86;
+}
+
+#special-attack:hover {
+    background-color: #914f62;
+}
+
+#heal {
+    background-color: #725a7a;
+}
+
+#heal:hover {
+    background-color: #4b3b50;
+}
+
+#give-up {
+    background-color: #355c7d;
+}
+
+#give-up:hover {
+    background-color: #2a4964;
+}
